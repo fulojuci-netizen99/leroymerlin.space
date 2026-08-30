@@ -1,0 +1,89 @@
+cat > checkout.html << 'EOF'
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - Leroy Merlin</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;min-height:100vh;background:linear-gradient(180deg,#0d4a1f,#052a10);color:#052a10;padding:30px 15px}
+.wrap{max-width:900px;margin:auto}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:#fff;border-radius:16px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.22)}
+h1{color:#fff;text-align:center;margin-bottom:20px}
+h2{font-size:20px;margin-bottom:14px}
+.item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee}
+.total{display:flex;justify-content:space-between;font-size:24px;font-weight:900;padding-top:16px;margin-top:8px}
+.field{margin-bottom:12px}
+label{display:block;font-size:13px;font-weight:800;margin-bottom:5px}
+input{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px}
+button{width:100%;padding:14px;border:none;border-radius:8px;background:#00a650;color:#fff;font-size:16px;font-weight:800;cursor:pointer}
+button:disabled{background:#aaa}
+.error{display:none;background:#ffe8e8;color:#991b1b;padding:10px;border-radius:8px;margin-top:10px}
+.pix{text-align:center;display:none}
+.pix img{max-width:280px;width:100%;margin:12px auto}
+.code{background:#f5f5f5;border:1px dashed #bbb;padding:12px;border-radius:8px;word-break:break-all;margin:12px 0;font-size:12px}
+.back{display:inline-block;color:#fff;margin-bottom:14px;text-decoration:none;font-weight:bold}
+.copy{background:#1a73e8;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:bold;cursor:pointer;width:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <a class="back" href="index.html">← Voltar</a>
+    <h1>Finalizar compra</h1>
+    <div class="grid">
+        <section class="card">
+            <h2>Resumo do pedido</h2>
+            <div id="items"></div>
+            <div class="total"><span>Total</span><span id="total">R$ 0,00</span></div>
+        </section>
+        <section class="card">
+            <div id="formWrap">
+                <h2>Seus dados</h2>
+                <div class="field"><label>Nome completo</label><input id="nome"></div>
+                <div class="field"><label>E-mail</label><input id="email" type="email"></div>
+                <div class="field"><label>CPF</label><input id="cpf" maxlength="14" placeholder="000.000.000-00"></div>
+                <div class="field"><label>Telefone</label><input id="telefone" placeholder="(21) 99999-9999"></div>
+                <button id="payBtn">GERAR PIX</button>
+                <div class="error" id="errorBox"></div>
+            </div>
+            <div id="pixWrap" class="pix"></div>
+        </section>
+    </div>
+</div>
+<script>
+function getCart(){try{return JSON.parse(localStorage.getItem('cart')||'[]')}catch(e){return[]}}
+const money=v=>Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function totalCarrinho(){return getCart().reduce((t,i)=>t+Number(i.preco)*Number(i.qtd),0)}
+function renderResumo(){
+const cart=getCart();const items=document.getElementById('items');const totalEl=document.getElementById('total');const payBtn=document.getElementById('payBtn');
+if(!cart.length){items.innerHTML='<p style="color:red;">⚠️ Carrinho vazio!</p>';payBtn.disabled=true;totalEl.textContent='R$ 0,00';return}
+items.innerHTML=cart.map(i=>`<div class="item"><b>${i.nome} × ${i.qtd}</b><span>${money(i.preco*i.qtd)}</span></div>`).join('');
+totalEl.textContent=money(totalCarrinho());payBtn.disabled=false
+}
+function digits(v){return String(v||'').replace(/\D/g,'')}
+async function gerarPix(){
+const nome=document.getElementById('nome').value.trim();
+const email=document.getElementById('email').value.trim();
+const cpf=digits(document.getElementById('cpf').value);
+const telefone=digits(document.getElementById('telefone').value);
+const errorBox=document.getElementById('errorBox');const payBtn=document.getElementById('payBtn');
+errorBox.style.display='none';
+if(!nome||!email||cpf.length!==11){errorBox.textContent='⚠️ Preencha nome, e-mail e CPF corretamente.';errorBox.style.display='block';return}
+const total=totalCarrinho();if(total<=0){errorBox.textContent='⚠️ Carrinho vazio!';errorBox.style.display='block';return}
+try{payBtn.disabled=true;payBtn.textContent='⏳ GERANDO PIX...';
+const resp=await fetch('/api/pix',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({amount:total,nome,email,cpf,telefone})});
+const data=await resp.json();console.log('📥 Resposta:',data);
+if(!data.success)throw new Error(data.error||'Erro ao gerar PIX');
+document.getElementById('formWrap').style.display='none';
+const pixWrap=document.getElementById('pixWrap');pixWrap.style.display='block';
+pixWrap.innerHTML=`<h2>✅ PIX GERADO!</h2><p>Valor: <strong>${money(data.valor||total)}</strong></p><img src="${data.qr_code_base64}"><div class="code">${data.pix_code}</div><button class="copy" onclick="navigator.clipboard.writeText('${data.pix_code}')">📋 COPIAR</button><br><br><button onclick="location.href='/'">NOVA COMPRA</button>`;
+}catch(error){errorBox.textContent='❌ '+error.message;errorBox.style.display='block';payBtn.disabled=false;payBtn.textContent='TENTAR NOVAMENTE'}
+}
+document.addEventListener('DOMContentLoaded',renderResumo);
+window.gerarPix=gerarPix;
+</script>
+</body>
+</html>
+EOF

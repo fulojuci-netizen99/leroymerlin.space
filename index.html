@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoção de Aniversário | Leroy Merlin</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Arial,sans-serif;background:radial-gradient(circle at 50% 0%,#14532a,#052a10 60%);color:#fff;min-height:100vh;padding-bottom:40px}
+        .header{position:relative;overflow:hidden;padding:30px 16px 24px;text-align:center}
+        @media(min-width:640px){.header{padding-top:48px}}
+        .header .c{position:absolute;border-radius:50%}
+        .c1{left:2%;top:1%;width:64px;height:80px;background:radial-gradient(circle at 32% 28%,#fbeaae,#e0b03c 45%,#8a6414)}
+        .c2{left:16%;top:-2%;width:80px;height:96px;background:radial-gradient(circle at 32% 28%,#8ce09b,#2f9c46 45%,#0c4a1d)}
+        .c3{left:8%;top:16%;width:56px;height:64px;background:radial-gradient(circle at 32% 28%,#8ce09b,#2f9c46 45%,#0c4a1d)}
+        .c4{right:2%;top:2%;width:64px;height:80px;background:radial-gradient(circle at 32% 28%,#8ce09b,#2f9c46 45%,#0c4a1d)}
+        .c5{right:15%;top:-2%;width:80px;height:96px;background:radial-gradient(circle at 32% 28%,#fbeaae,#e0b03c 45%,#8a6414)}
+        .c6{right:7%;top:17%;width:56px;height:64px;background:radial-gradient(circle at 32% 28%,#fbeaae,#e0b03c 45%,#8a6414)}
+        @media(min-width:640px){.c1,.c4{width:112px;height:112px}.c2,.c5{width:128px;height:128px}.c3,.c6{width:96px;height:96px}}
+        .hc{position:relative;max-width:768px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:12px}
+        .hc .sub{font-size:20px;font-weight:700;letter-spacing:.15em;color:#f6dda0}@media(min-width:640px){.hc .sub{font-size:30px}}
+        .hc h1{font-size:36px;font-weight:800;letter-spacing:-.025em;color:#fff;text-shadow:0 4px 0 rgba(0,0,0,.35);line-height:1;text-wrap:balance}@media(min-width:640px){.hc h1{font-size:60px}}@media(min-width:1024px){.hc h1{font-size:72px}}
+        .hc .bb{width:100%;max-width:576px;margin-top:8px}.hc .bb div{background:linear-gradient(180deg,#f6dda0,#e0b03c 40%,#b98a20);padding:8px 24px;box-shadow:0 4px 10px rgba(0,0,0,.35)}.hc .bb p{font-size:11px;font-weight:800;letter-spacing:.08em;color:#052a10;text-wrap:balance}@media(min-width:640px){.hc .bb p{font-size:16px}}
+        .hc .brand{margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:4px}.hc .brand .n{display:flex;align-items:center;gap:8px}@media(min-width:640px){.hc .brand .n{gap:12px}}
+        .hc .brand .n span{font-size:24px;font-weight:800;letter-spacing:-.025em;color:#fff}@media(min-width:640px){.hc .brand .n span{font-size:36px}}@media(min-width:1024px){.hc .brand .n span{font-size:48px}}
+        .hc .brand .n .ar{display:inline-block;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-bottom:22px solid #4caf50}@media(min-width:640px){.hc .brand .n .ar{border-left-width:18px;border-right-width:18px;border-bottom-width:30px}}@media(min-width:1024px){.hc .brand .n .ar{border-left-width:22px;border-right-width:22px;border-bottom-width:36px}}
+        .hc .brand p{font-size:14px;color:rgba(255,255,255,.9)}@media(min-width:640px){.hc .brand p{font-size:16px}}@media(min-width:1024px){.hc .brand p{font-size:18px}}.hc .brand p .hl{text-decoration:underline}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+        .parceiros{max-width:1024px;margin:0 auto;padding:0 16px}.parceiros .card{border:2px solid #e0b03c;border-radius:12px;background:linear-gradient(180deg,#0f5424,#06340f);padding:16px}@media(min-width:640px){.parceiros .card{padding:24px}}
+        .parceiros .g{display:grid;align-items:center;gap:16px;text-align:center}@media(min-width:640px){.parceiros .g{grid-template-columns:repeat(3,1fr)}}
+        .parceiros .g .tx{font-size:12px;font-weight:700;letter-spacing:.025em;color:#fff;text-wrap:balance}@media(min-width:640px){.parceiros .g .tx{font-size:14px}}
+        .parceiros .g .ct{display:flex;flex-direction:column;align-items:center;border-color:rgba(255,255,255,.15)}@media(min-width:640px){.parceiros .g .ct{border-left:1px solid rgba(255,255,255,.15);border-right:1px solid rgba(255,255,255,.15)}}
+        .parceiros .g .ct .sm{font-size:11px;font-weight:700;letter-spacing:.025em;color:#fff}@media(min-width:640px){.parceiros .g .ct .sm{font-size:12px}}
+        .parceiros .g .ct .bg{display:flex;align-items:flex-end;justify-content:center;gap:4px}.parceiros .g .ct .bg .num{font-size:48px;font-weight:800;color:#e0b03c;line-height:1}@media(min-width:640px){.parceiros .g .ct .bg .num{font-size:60px}}
+        .parceiros .g .ct .bg .lb{font-size:12px;font-weight:700;color:#fff;padding-bottom:8px}
+        .parceiros .g .ri h2{font-size:18px;font-weight:800;letter-spacing:.025em;color:#7ede8f}@media(min-width:640px){.parceiros .g .ri h2{font-size:20px}}
+        .parceiros .logos{margin-top:16px;display:grid;overflow:hidden;border-radius:8px;background:#f7f3e8}@media(min-width:640px){.parceiros .logos{grid-template-columns:repeat(3,1fr)}}
+        .parceiros .logos li{list-style:none;padding:16px;text-align:center;font-size:20px;font-weight:800;border-bottom:1px solid rgba(0,0,0,.1)}@media(min-width:640px){.parceiros .logos li{font-size:24px;border-bottom:none}.parceiros .logos li:not(:last-child){border-right:1px solid rgba(0,0,0,.1)}}
+        .parceiros .logos .mp{color:#00a6e0}.parceiros .logos .br{color:#cc092f}.parceiros .logos .pb{color:#0f8a5f}
+        .produtos{max-width:1024px;margin:24px auto 0;padding:0 16px}.produtos .g{display:grid;gap:16px}@media(min-width:640px){.produtos .g{grid-template-columns:repeat(2,1fr)}}@media(min-width:1024px){.produtos .g{grid-template-columns:repeat(3,1fr)}}
+        .pc{display:flex;flex-direction:column;overflow:hidden;border-radius:12px;border:2px solid #e0b03c;background:#f7f3e8;color:#052a10;height:100%}
+        .pc .tit{background:linear-gradient(180deg,#14622b,#0a3d17);padding:12px;text-align:center;font-size:14px;font-weight:800;letter-spacing:.025em;color:#fff;text-wrap:balance}@media(min-width:640px){.pc .tit{font-size:16px}}
+        .pc .bd{position:relative;flex:1;padding:12px}.pc .bd .tag{position:absolute;top:12px;left:12px;z-index:10;background:linear-gradient(180deg,#f6dda0,#e0b03c);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:800;color:#052a10;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+        .pc .bd .in{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:8px}.pc .bd .in .im{position:relative;aspect-ratio:1}.pc .bd .in .im img{width:100%;height:100%;object-fit:contain;border-radius:8px;background:#fff}
+        .pc .bd .in .fe{display:flex;flex-direction:column;gap:6px;list-style:none}.pc .bd .in .fe li{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;line-height:1.3;color:#052a10}.pc .bd .in .fe li .ic{display:flex;width:24px;height:24px;flex-shrink:0;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(13,74,31,.4);font-size:12px}
+        .pc .pr{display:grid;border-top:1px solid rgba(13,74,31,.2);background:rgba(255,255,255,.6)}.pc .pr .pi{padding:10px 12px;text-align:center}.pc .pr .pi .lb{font-size:10px;font-weight:700;letter-spacing:.025em;color:rgba(5,42,16,.7)}.pc .pr .pi .ol{font-size:12px;font-weight:600;color:rgba(5,42,16,.5);text-decoration:line-through}.pc .pr .pi .nw{font-size:20px;font-weight:800;color:#052a10}@media(min-width:640px){.pc .pr .pi .nw{font-size:24px}}.pc .pr .pi .nw .cu{font-size:12px;vertical-align:top}
+        .pc .pr .tc{grid-template-columns:repeat(2,1fr)}.pc .pr .tc .pi:first-child{border-right:1px solid rgba(13,74,31,.2)}.pc .pr .oc{grid-template-columns:1fr}
+        .pc .qt{padding:10px 12px 12px;border-top:1px solid rgba(13,74,31,.15);background:rgba(255,255,255,.4)}
+        .pc .qt .qc{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px}
+        .pc .qt .qc button{width:32px;height:32px;border-radius:50%;border:2px solid #ddd;background:#fff;font-size:18px;font-weight:700;cursor:pointer;transition:.2s}
+        .pc .qt .qc button:hover{background:#052a10;color:#fff;border-color:#052a10}
+        .pc .qt .qc .qty{font-size:18px;font-weight:700;min-width:30px;text-align:center}
+        .pc .qt .btn-add{width:100%;padding:10px;background:#00a650;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;transition:.3s;text-transform:uppercase;letter-spacing:.5px}
+        .pc .qt .btn-add:hover{background:#008a45}.pc .qt .btn-add:disabled{background:#ccc;cursor:not-allowed}
+        .bottom{max-width:1024px;margin:24px auto 0;padding:0 16px}
+        .bottom .top{display:flex;flex-direction:column;align-items:center;gap:8px;padding:24px 0;text-align:center}@media(min-width:640px){.bottom .top{flex-direction:row;justify-content:center;gap:16px}}
+        .bottom .top svg{width:40px;height:40px;stroke:#e0b03c}
+        .bottom .top h2{font-size:18px;font-weight:800;color:#fff;text-wrap:balance}@media(min-width:640px){.bottom .top h2{font-size:24px}}
+        .bottom .feat{display:grid;gap:16px;border-radius:12px;border:2px solid #e0b03c;padding:16px}@media(min-width:640px){.bottom .feat{grid-template-columns:repeat(3,1fr);padding:24px}}
+        .bottom .feat li{list-style:none;display:flex;align-items:flex-start;gap:12px}.bottom .feat li svg{width:32px;height:32px;flex-shrink:0;stroke:#e0b03c}
+        .bottom .feat li div p{font-size:14px;font-weight:800;color:#fff}.bottom .feat li div small{font-size:12px;color:rgba(255,255,255,.75);line-height:1.625}
+        .footer{max-width:768px;margin:32px auto 0;padding:0 16px;text-align:center}.footer p{font-size:11px;line-height:1.625;color:rgba(255,255,255,.6)}
+        .cf{position:fixed;bottom:24px;right:24px;z-index:999;background:#00a650;color:#fff;border:none;border-radius:50%;width:64px;height:64px;font-size:28px;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,.3);transition:transform .2s;display:flex;align-items:center;justify-content:center;position:relative}
+        .cf:hover{transform:scale(1.05)}.cf .badge{position:absolute;top:-6px;right:-6px;background:#ff4444;color:#fff;border-radius:50%;width:24px;height:24px;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+        .ov{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:999}.ov.active{display:block}
+        .cs{position:fixed;top:0;right:-420px;width:420px;max-width:95%;height:100%;z-index:1000;background:#fff;color:#052a10;padding:24px 20px;box-shadow:-4px 0 20px rgba(0,0,0,.2);transition:right .3s;overflow-y:auto}.cs.open{right:0}
+        .cs .hd{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #eee;padding-bottom:14px;margin-bottom:14px}
+        .cs .hd h2{font-size:22px;color:#052a10}.cs .hd .cl{font-size:28px;cursor:pointer;color:#999;background:0;border:none}.cs .hd .cl:hover{color:#000}
+        .ce{text-align:center;padding:40px 0;color:#999}.ce .ic{font-size:48px;margin-bottom:10px}
+        .ci{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #f0f0f0;align-items:center}
+        .ci img{width:55px;height:55px;object-fit:contain;background:#f8f9fa;border-radius:6px}
+        .ci .inf{flex:1}.ci .inf .nm{font-weight:600;font-size:14px}.ci .inf .pr{color:#cc0000;font-weight:700;font-size:15px}
+        .ci .qt{display:flex;align-items:center;gap:8px}.ci .qt button{width:28px;height:28px;border-radius:50%;border:1px solid #ddd;background:#fff;cursor:pointer;font-weight:700}.ci .qt button:hover{background:#052a10;color:#fff}.ci .qt span{font-weight:700;min-width:20px;text-align:center}
+        .ci .rm{color:#ff4444;cursor:pointer;font-size:18px;background:0;border:none}
+        .cto{display:flex;justify-content:space-between;font-size:16px;margin-bottom:4px}.cto .lb{color:#666}.cto .vl{font-weight:bold}
+        .cto.gr{font-size:22px;font-weight:900;color:#052a10;border-top:2px solid #e0e0e0;padding-top:12px;margin-top:4px}
+        .btn-ch{width:100%;padding:16px;background:#00a650;color:#fff;border:none;border-radius:8px;font-size:18px;font-weight:700;cursor:pointer;transition:.3s;text-transform:uppercase;letter-spacing:1px;margin-top:10px}
+        .btn-ch:hover{background:#008a45}.btn-ch:disabled{background:#ccc;cursor:not-allowed}
+        .pm{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:1001;justify-content:center;align-items:center}
+        .pm.active{display:flex}.pm .co{background:#fff;max-width:480px;width:100%;padding:30px;border-radius:20px;text-align:center;max-height:90vh;overflow-y:auto;position:relative;color:#052a10;animation:fi .3s}
+        @keyframes fi{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+        .pm .co .cl{position:absolute;top:12px;right:18px;font-size:28px;cursor:pointer;color:#999;background:0;border:none}.pm .co .cl:hover{color:#000}
+        .pm .co .qr img{max-width:100%;border:2px solid #eee;border-radius:10px}
+        .pm .co .cd{background:#f5f5f5;padding:14px;border-radius:8px;word-break:break-all;font-size:13px;border:1px dashed #ccc;margin:14px 0}
+        .pm .co .btn-cp{background:#052a10;color:#fff;padding:10px 20px;border:none;border-radius:6px;cursor:pointer;font-weight:700}
+        .pm .co .btn-cp:hover{background:#0a3d17}
+        .pm .co .sp{display:inline-block;width:40px;height:40px;border:4px solid #f3f3f3;border-top:4px solid #052a10;border-radius:50%;animation:spin 1s linear infinite}
+        @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+        @media(max-width:480px){.pc .bd .in{grid-template-columns:1fr 1fr}.pc .bd .in .fe li{font-size:10px}}
+        @media(max-width:768px){.cs{right:-100%;width:100%;max-width:100%}.cs.open{right:0}}
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <span class="c c1"></span>
+        <span class="c c2"></span>
+        <span class="c c3"></span>
+        <span class="c c4"></span>
+        <span class="c c5"></span>
+        <span class="c c6"></span>
+        <div class="hc">
+            <p class="sub">PROMOÇÃO DE</p>
+            <h1>ANIVERSÁRIO</h1>
+            <div class="bb"><div><p>É ANIVERSÁRIO. É DESCONTO. É PRA CONSTRUIR.</p></div></div>
+            <div class="brand">
+                <div class="n"><span>LEROY</span><span class="ar"></span><span>MERLIN</span></div>
+                <p>A casa da <span class="hl">sua</span> casa.</p>
+                <span class="sr-only">Leroy Merlin</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="parceiros">
+        <div class="card">
+            <div class="g">
+                <p class="tx">SE VOCÊ JÁ TEM CONTA EM ALGUM DELES,</p>
+                <div class="ct">
+                    <p class="sm">VOCÊ JÁ POSSUI</p>
+                    <div class="bg"><span class="num">30%</span><span class="lb">DE DESCONTO</span></div>
+                </div>
+                <div class="ri"><h2 id="bancos-parceiros">BANCOS<br>PARCEIROS</h2></div>
+            </div>
+            <ul class="logos">
+                <li class="mp">Mercado Pago</li>
+                <li class="br">Bradesco</li>
+                <li class="pb">PagBank</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="produtos">
+        <div class="g" id="produtosGrid"></div>
+    </section>
+
+    <section class="bottom">
+        <div class="top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
+            <h2>É ANIVERSÁRIO,<br>MAS O PRESENTE É TODO SEU!</h2>
+        </div>
+        <ul class="feat">
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><div><p>QUALIDADE QUE VOCÊ CONFIA.</p><small>Produtos das melhores marcas do mercado.</small></div></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><div><p>ENTREGA PARA SUA OBRA.</p><small>Mais agilidade e segurança na entrega.</small></div></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg><div><p>CONDIÇÕES ESPECIAIS.</p><small>Facilidade de pagamento para construir mais.</small></div></li>
+        </ul>
+    </section>
+
+    <footer class="footer">
+        <p>*Ofertas válidas por tempo limitado ou enquanto durarem os estoques.<br>Imagens meramente ilustrativas.</p>
+    </footer>
+
+    <!-- CARRINHO -->
+    <button class="cf" id="cartBtn">🛒<span class="badge" id="cartBadge">0</span></button>
+    <div class="ov" id="overlay"></div>
+    <div class="cs" id="cartSidebar">
+        <div class="hd"><h2>🛒 Carrinho</h2><button class="cl" id="closeCart">✕</button></div>
+        <div id="cartItems"><div class="ce"><div class="ic">🛒</div><p>Seu carrinho está vazio</p></div></div>
+        <div id="cartTotal"></div>
+        <button class="btn-ch" id="checkoutBtn" disabled>FINALIZAR COMPRA</button>
+    </div>
+
+    <!-- MODAL PIX -->
+    <div class="pm" id="pixModal">
+        <div class="co"><button class="cl" id="closePix">✕</button><div id="pixContent"><div class="sp"></div><p style="margin-top:12px;">⏳ Gerando PIX...</p></div></div>
+    </div>
+
+    <script>
+        // PRODUTOS
+        const produtos = [
+            { id:1, nome:'TIJOLO', img:'products/tijolo.png', desc:['Leve e resistente','Conforto térmico','Produto de qualidade'], preco:0.42, preco_old:0.60, unidade:'Cada', pallet:'PALLET MILEIRO', pallet_preco:420.00, pallet_old:600.00 },
+            { id:2, nome:'PALLET DE BLOCO DE CONCRETO CELULAR AUTOCLAVADO (BCCA)', img:'products/bcca.png', desc:['Mais leve e preciso','Isolamento térmico/acústico','Obra mais rápida e limpa'], preco:7.00, preco_old:10.00, unidade:'Cada', pallet:'PALLET MILEIRO', pallet_preco:7000.00, pallet_old:10000.00 },
+            { id:3, nome:'PALLET DE BLOCO DE CONCRETO VEDAÇÃO', img:'products/bloco-concreto.png', desc:['Alta resistência','Durabilidade e segurança','Ideal para vedação'], preco:1.05, preco_old:1.50, unidade:'Cada', pallet:'PALLET MILEIRO', pallet_preco:1050.00, pallet_old:1500.00 },
+            { id:4, nome:'CIMENTO CP II', img:'products/cimento-cp2.png', desc:['Uso geral','Ideal para alvenaria','Qualidade garantida'], preco:12.59, preco_old:17.99, unidade:'Saco 50kg', pallet:null, pallet_preco:null, pallet_old:null },
+            { id:5, nome:'CIMENTO CP III', img:'products/cimento-cp3.png', desc:['Alta resistência inicial','Mais rapidez na obra','Ideal para estruturas'], preco:14.00, preco_old:20.00, unidade:'Saco 50kg', pallet:null, pallet_preco:null, pallet_old:null },
+            { id:6, nome:'CIMENTO CP II-E', img:'products/cimento-cp2e.png', desc:['Mais resistência','Indicado para concreto armado','Desempenho superior'], preco:17.49, preco_old:24.99, unidade:'Saco 50kg', pallet:null, pallet_preco:null, pallet_old:null }
+        ];
+
+        let cart = [];
+        let qtys = {};
+
+        function renderProdutos() {
+            const grid = document.getElementById('produtosGrid');
+            grid.innerHTML = '';
+            produtos.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'pc';
+                card.innerHTML = `
+                    <div class="tit">${p.nome}</div>
+                    <div class="bd">
+                        <span class="tag">30% OFF</span>
+                        <div class="in">
+                            <div class="im"><img src="${p.img}" alt="${p.nome}"></div>
+                            <ul class="fe">${p.desc.map(d => `<li><span class="ic">✓</span>${d}</li>`).join('')}</ul>
+                        </div>
+                    </div>
+                    <div class="pr ${p.pallet ? 'tc' : 'oc'}">
+                        <div class="pi"><div class="lb">${p.unidade}</div><div class="ol">R$ ${p.preco_old.toFixed(2).replace('.', ',')}</div><div class="nw"><span class="cu">R$ </span>${p.preco.toFixed(2).replace('.', ',')}</div></div>
+                        ${p.pallet ? `<div class="pi"><div class="lb">${p.pallet}</div><div class="ol">R$ ${p.pallet_old.toFixed(2).replace('.', ',')}</div><div class="nw"><span class="cu">R$ </span>${p.pallet_preco.toFixed(2).replace('.', ',')}</div></div>` : ''}
+                    </div>
+                    <div class="qt">
+                        <div class="qc">
+                            <button onclick="alterarQtd(${p.id}, -1)">−</button>
+                            <span class="qty" id="qty_${p.id}">0</span>
+                            <button onclick="alterarQtd(${p.id}, 1)">+</button>
+                        </div>
+                        <button class="btn-add" id="btn_${p.id}" onclick="adicionarAoCarrinho(${p.id})">🛒 ADICIONAR</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function alterarQtd(id, delta) {
+            if (!qtys[id]) qtys[id] = 0;
+            qtys[id] = Math.max(0, qtys[id] + delta);
+            const el = document.getElementById(`qty_${id}`);
+            if (el) el.textContent = qtys[id];
+            const btn = document.getElementById(`btn_${id}`);
+            if (btn) btn.disabled = qtys[id] === 0;
+        }
+
+        function adicionarAoCarrinho(id) {
+            const p = produtos.find(x => x.id === id);
+            const qtd = qtys[id] || 0;
+
+            if (!p || qtd <= 0) return;
+
+            const existente = cart.find(item => item.id === id);
+
+            if (existente) {
+                existente.qtd += qtd;
+            } else {
+                cart.push({
+                    id: p.id,
+                    nome: p.nome,
+                    img: p.img,
+                    preco: p.preco,
+                    qtd: qtd
+                });
+            }
+
+            qtys[id] = 0;
+            const qtyEl = document.getElementById(`qty_${id}`);
+            if (qtyEl) qtyEl.textContent = '0';
+
+            const btn = document.getElementById(`btn_${id}`);
+            if (btn) btn.disabled = true;
+
+            renderCarrinho();
+            abrirCarrinho();
+        }
+
+        function alterarQtdCarrinho(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+
+            item.qtd += delta;
+
+            if (item.qtd <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+
+            renderCarrinho();
+        }
+
+        function removerDoCarrinho(id) {
+            cart = cart.filter(i => i.id !== id);
+            renderCarrinho();
+        }
+
+        function totalCarrinho() {
+            return cart.reduce((total, item) => total + (item.preco * item.qtd), 0);
+        }
+
+        function renderCarrinho() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            const cartBadge = document.getElementById('cartBadge');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            const totalItens = cart.reduce((s, item) => s + item.qtd, 0);
+            cartBadge.textContent = totalItens;
+
+            if (!cart.length) {
+                cartItems.innerHTML = '<div class="ce"><div class="ic">🛒</div><p>Seu carrinho está vazio</p></div>';
+                cartTotal.innerHTML = '';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            cartItems.innerHTML = cart.map(item => `
+                <div class="ci">
+                    <img src="${item.img}" alt="${item.nome}">
+                    <div class="inf">
+                        <div class="nm">${item.nome}</div>
+                        <div class="pr">R$ ${(item.preco * item.qtd).toFixed(2).replace('.', ',')}</div>
+                        <div class="qt">
+                            <button onclick="alterarQtdCarrinho(${item.id}, -1)">−</button>
+                            <span>${item.qtd}</span>
+                            <button onclick="alterarQtdCarrinho(${item.id}, 1)">+</button>
+                            <button class="rm" onclick="removerDoCarrinho(${item.id})" title="Remover">×</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            const total = totalCarrinho();
+
+            cartTotal.innerHTML = `
+                <div style="padding-top:16px">
+                    <div class="cto"><span class="lb">Itens</span><span class="vl">${totalItens}</span></div>
+                    <div class="cto gr"><span>Total</span><span>R$ ${total.toFixed(2).replace('.', ',')}</span></div>
+                </div>
+            `;
+
+            checkoutBtn.disabled = false;
+        }
+
+        function abrirCarrinho() {
+            document.getElementById('cartSidebar').classList.add('open');
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        function fecharCarrinho() {
+            document.getElementById('cartSidebar').classList.remove('open');
+            document.getElementById('overlay').classList.remove('active');
+        }
+
+        function fecharPix() {
+            document.getElementById('pixModal').classList.remove('active');
+        }
+
+        function finalizarCompra() {
+            if (!cart.length) return;
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'checkout.html';
+        }
+
+        document.getElementById('cartBtn').addEventListener('click', abrirCarrinho);
+        document.getElementById('closeCart').addEventListener('click', fecharCarrinho);
+        document.getElementById('overlay').addEventListener('click', fecharCarrinho);
+        document.getElementById('checkoutBtn').addEventListener('click', finalizarCompra);
+        document.getElementById('closePix').addEventListener('click', fecharPix);
+
+        document.getElementById('pixModal').addEventListener('click', function(e) {
+            if (e.target === this) fecharPix();
+        });
+
+        renderProdutos();
+        renderCarrinho();
+
+        produtos.forEach(p => {
+            const btn = document.getElementById(`btn_${p.id}`);
+            if (btn) btn.disabled = true;
+        });
+    </script>
+</body>
+</html>
