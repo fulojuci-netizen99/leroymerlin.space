@@ -1,4 +1,3 @@
-cat > server.js << 'EOF'
 require('dotenv').config();
 
 const express = require('express');
@@ -148,4 +147,3 @@ app.listen(PORT, '0.0.0.0', () => {
 });
 
 fs.writeFileSync('server.pid', process.pid.toString());
-EOF
